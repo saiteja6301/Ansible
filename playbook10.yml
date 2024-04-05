@@ -1,0 +1,14 @@
+---
+- name: Install s/w apps
+  hosts: all
+  tasks:
+    - name: install multiple s/w apps
+      apt: 
+        name: "{{item}}"
+        state: present
+        update_cache: yes
+      with_items: 
+        - tree
+        - openjdk-11-jdk
+        - maven
+...          

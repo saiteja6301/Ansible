@@ -1,0 +1,12 @@
+---
+- name: download jenkins.war
+  hosts: all
+  vars: 
+    - a: 20
+  tasks: 
+    - name: download jenkins
+      get_url:
+        url: http://get.jenkins.io/war-stable/2.440.2/jenkins.war
+        dest: /tmp
+      when: a==10
+...
